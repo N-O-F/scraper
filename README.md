@@ -1,6 +1,6 @@
 ![bundler scraper image](Assets/bundler-scraper.png)
-# Bundler Scraper
 
+# Bundler Scraper
 
 This is the core scraper which powers bundler. It follows simple MVC coding pattern with splitted cralwers.
 
@@ -13,6 +13,8 @@ http://localhost:5000/api/v1/{crawlerName}?title={searchPhrase}
 ```
 
 **Mock Requests**
+
+###### Medium Mockup Request
 
 ```
 http://localhost:5000/api/v1/scrape/medium?title=arts
@@ -43,6 +45,60 @@ http://localhost:5000/api/v1/scrape/medium?title=arts
     "source": {
         "title": "medium",
         "url": "https://medium.com"
+    }
+}
+```
+
+###### Youtube Mockup Request
+
+```
+http://localhost:5000/api/v1/scrape/youtube?title=react
+
+```
+
+```
+{
+    "articles": [
+        {
+            "author": {
+                "url": ""
+            },
+            "video": {
+                "title": "Learn while you're at home",
+                "img": "",
+                "duration": 0
+            }
+        },
+        {
+            "author": {
+                "name": "Modern World",
+                "channelID": "UC5BdO0zxqBHKL4QS1oWAiPg",
+                "url": "https://yt3.ggpht.com/ytc/AKedOLSjlpvTiamszbququLH-WFwCUBohgtgOJ2o4uGVqQ=s68-c-k-c0x00ffffff-no-rj",
+                "ownerBadges": [
+                    "Verified"
+                ],
+                "verified": true
+            },
+            "video": {
+                "title": "Great Asian Art Skill! Creative Art Ideas Talented People! Satisfying Art works for week #26!",
+                "id": "7_PHJz0W564",
+                "url": "https://www.youtube.com/watch?v=7_PHJz0W564",
+                "img": "https://i.ytimg.com/vi/7_PHJz0W564/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDf6NtAMIXS4Ob0ehTwPzR-tNshlw",
+                "badges": [
+                    "New"
+                ],
+                "desc": null,
+                "views": 2979,
+                "publishedOn": "2 hours ago",
+                "duration": 510
+            }
+        },
+	...
+    ],
+    "searchWord": "arts",
+    "source": {
+        "title": "youtube",
+        "url": "https://youtube.com"
     }
 }
 ```
