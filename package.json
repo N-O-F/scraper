@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart":"nodemon index.js"
+    "devStart": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "puppeteer": "^10.1.0"
+    "puppeteer": "^10.1.0",
+    "ytsr": "^3.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
