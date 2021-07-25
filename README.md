@@ -6,7 +6,7 @@ This is the core scraper which powers bundler. It follows simple MVC coding patt
 
 **Crawler:** These are the entities which scraped website. Each crawler is designed to scrape a particular website. We have different crawlers like youtube.crawler and medium.crawler
 
-#### Supported Endpoints
+## Supported Endpoints
 
 **Endpoint to Scrape Articles:**
 
@@ -20,9 +20,9 @@ http://localhost:5000/api/v1/{crawlerName}?title={searchPhrase}
 http://localhost:5000/api/v1/tags?topic={topic}
 ```
 
-**Mock Requests**
+## Mock Requests
 
-###### Medium Mockup Request
+**Medium Mockup Request**
 
 ```
 http://localhost:5000/api/v1/scrape/medium?title=arts
@@ -57,7 +57,7 @@ http://localhost:5000/api/v1/scrape/medium?title=arts
 }
 ```
 
-###### Youtube Mockup Request
+**Youtube Mockup Request**
 
 ```
 http://localhost:5000/api/v1/scrape/youtube?title=react
@@ -110,7 +110,7 @@ http://localhost:5000/api/v1/scrape/youtube?title=react
 }
 ```
 
-###### Tags Scraper Mockup Request
+**Tags Scraper Mockup Request**
 
 ```
 http://localhost:5000/api/v1/tags?topic=immer
