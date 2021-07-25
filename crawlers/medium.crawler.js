@@ -1,10 +1,10 @@
 const puppeteer = require("puppeteer");
 const crypto = require("crypto");
-const randomuid = (length)=>{
+const randomuid = (length) => {
   return crypto.randomBytes(length).toString("hex");
-}
+};
 
-module.exports =   async (titleWord) => {
+module.exports = async (titleWord) => {
   const MEDIUM_URL = `https://medium.com/search?q=${titleWord}`;
   const SEARCH_BUTTON = "search";
   const browser = await puppeteer.launch();
@@ -25,7 +25,7 @@ module.exports =   async (titleWord) => {
           return parseInt(removeTail(number, "K")) * 1000;
         else return parseInt(number);
       };
-      
+
       let authorData = card.querySelector(".avatar-image");
       authorData = authorData ? authorData.getAttribute("src") : "";
       let authorUrl = card.querySelector(".link");
@@ -69,10 +69,10 @@ module.exports =   async (titleWord) => {
       };
     });
   });
-  articles2.forEach(article=>{
+  articles2.forEach((article) => {
     article["author"]["id"] = randomuid(6);
     article["article"]["id"] = randomuid(14);
-  })
+  });
   return articles2;
   //   const articles = await page.evaluate(() => {
   //     let a = Array.from(document.getElementsByClassName("section-content")).map(

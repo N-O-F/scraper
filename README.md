@@ -6,10 +6,18 @@ This is the core scraper which powers bundler. It follows simple MVC coding patt
 
 **Crawler:** These are the entities which scraped website. Each crawler is designed to scrape a particular website. We have different crawlers like youtube.crawler and medium.crawler
 
-#### The Endpoints
+#### Supported Endpoints
+
+**Endpoint to Scrape Articles:**
 
 ```
 http://localhost:5000/api/v1/{crawlerName}?title={searchPhrase}
+```
+
+**Endpoint to Scarpe Similar Topics from a given query:**
+
+```
+http://localhost:5000/api/v1/tags?topic={topic}
 ```
 
 **Mock Requests**
@@ -53,7 +61,6 @@ http://localhost:5000/api/v1/scrape/medium?title=arts
 
 ```
 http://localhost:5000/api/v1/scrape/youtube?title=react
-
 ```
 
 ```
@@ -100,6 +107,59 @@ http://localhost:5000/api/v1/scrape/youtube?title=react
         "title": "youtube",
         "url": "https://youtube.com"
     }
+}
+```
+
+###### Tags Scraper Mockup Request
+
+```
+http://localhost:5000/api/v1/tags?topic=immer
+```
+
+```
+{
+    "tags": [
+        {
+            "url": "https://medium.com/tag/immer?source=search",
+            "tag": "Immer"
+        },
+        {
+            "url": "https://medium.com/tag/javascript?source=search",
+            "tag": "JavaScript"
+        },
+        {
+            "url": "https://medium.com/tag/react?source=search",
+            "tag": "React"
+        },
+        {
+            "url": "https://medium.com/tag/redux?source=search",
+            "tag": "Redux"
+        },
+        {
+            "url": "https://medium.com/tag/immutability?source=search",
+            "tag": "Immutability"
+        },
+        {
+            "url": "https://medium.com/tag/immutable?source=search",
+            "tag": "Immutable"
+        },
+        {
+            "url": "https://medium.com/tag/virtual-reality?source=search",
+            "tag": "Virtual Reality"
+        },
+        {
+            "url": "https://medium.com/tag/immersive-theatre?source=search",
+            "tag": "Immersive Theatre"
+        },
+        {
+            "url": "https://medium.com/tag/np-newswire?source=search",
+            "tag": "Np Newswire"
+        },
+        {
+            "url": "https://medium.com/tag/technology?source=search",
+            "tag": "Technology"
+        }
+    ]
 }
 ```
 
