@@ -1,6 +1,6 @@
-
 const mediumCrawler = require("../crawlers/medium.crawler");
 const youtubeCrawler = require("../crawlers/youtube.crawler");
+const scrapeTags = require("../crawlers/tags.crawler");
 
 const SITES = {medium:{crawler:mediumCrawler,url:"https://medium.com"},youtube:{crawler:youtubeCrawler,url:"https://youtube.com"}}
 exports.SCRAPE = async (req,res,next)=>{
@@ -20,3 +20,11 @@ exports.SCRAPE = async (req,res,next)=>{
     let results = await currentCrawler.crawler(title);
     res.json({data:results,searchWord:title,source:{title:scrapeFrom,url:currentCrawler.url}})
 }
+exports.SCRAPE_TAGS = async (req, res) => {
+    const topic = req.query.topic;
+    if (!topic) return res.sendStatus(400);
+    const tags = await scrapeTags(topic);
+    res.json({ tags });
+  };
+
+
