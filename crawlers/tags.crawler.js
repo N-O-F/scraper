@@ -20,6 +20,8 @@ module.exports = async (topic) => {
       });
     });
   });
-
-  return tags[0]; // to avoid array of array structure
+  if(tags && tags.length>0)
+    return tags[0]; // to avoid array of array structure
+  else
+    return [];
 };
