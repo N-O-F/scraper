@@ -1,10 +1,10 @@
 const express = require("express");
 
 const server = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 server.use(express.json())
-server.use(express.urlencoded({extended:false}))
+server.use(express.urlencoded({extended:true}))
 
 const ScrapeRouters = require("./router/scrape");
 

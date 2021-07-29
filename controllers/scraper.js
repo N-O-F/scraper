@@ -18,5 +18,5 @@ exports.SCRAPE = async (req,res,next)=>{
         res.sendStatus(400)
     }
     let results = await currentCrawler.crawler(title);
-    res.json({articles:results,searchWord:title,source:{title:scrapeFrom,url:currentCrawler.url}})
+    res.json({data:results,searchWord:title,source:{title:scrapeFrom,url:currentCrawler.url}})
 }
